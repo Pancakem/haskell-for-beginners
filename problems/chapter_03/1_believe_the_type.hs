@@ -17,16 +17,22 @@ j x y = x:y ++ " Goodbye"
 -- without an error, then you have a valid signature!
 
 -- add1 :: ???
+add1 :: Int -> Int
 add1 x = x + 1
 
+hasThree :: [Int] -> Bool
 hasThree ns = 3 `elem` ns
 
+hasFoo :: [[Char]] -> Bool
 hasFoo words = "foo" `elem` words
 
+interject :: [Char] -> [Char] -> [Char]
 interject before after = before ++ " - HEY! - " ++ after
 
+isTwice :: Int -> Int -> Bool
 isTwice x y = x == y * 2
 
+numberThem :: [Char] -> [(Integer, Char)]
 numberThem word = zip [1..] (word ++ " more")
 
 -- Write functions for the following type signatures.
@@ -34,21 +40,24 @@ numberThem word = zip [1..] (word ++ " more")
 -- on the name and type signature.
 
 area :: Double -> Double -> Double
-area = undefined
+area side1 side2 = side1 * side2
 
 doubleThem :: [Int] -> [Int]
-doubleThem = undefined
+doubleThem xs = [x*2 | x <- xs]
 
 numberOfMs :: String -> Int
-numberOfMs = undefined
+numberOfMs str = length [ char | char <- str, char == 'm']
 
 -- Write type signatures *and* definitions for the following
 -- functions. Guess what they should do based on the name and parameters.
 -- In some cases, more than one definition or signature might be acceptable.
 
-removeVowels string = undefined
+removeVowels :: [Char] -> [Char]
+removeVowels string = [x | x <- string, not (elem x "aeiouAEIOU")]
 
-hypotenuse a b = undefined -- hint: use sqrt
+hypotenuse :: Float -> Float -> Float
+hypotenuse a b = sqrt ((a*a) + (b*b))
 
-makeRects lengths widths = undefined
+makeRects :: [Float] -> [Float] -> [(Float, Float)]
+makeRects lengths widths = zip lengths widths
 
