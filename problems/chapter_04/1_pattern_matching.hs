@@ -18,6 +18,7 @@ fizzBuzzLose 12 = "Fizz"
 fizzBuzzLose 13 = "13"
 fizzBuzzLose 14 = "14"
 fizzBuzzLose 15 = "Fizz Buzz"
+fizzBuzzLose _ = "lost"
 
 
 -- Write two functions to calculate the 2 and 3 dimensional
